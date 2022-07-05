@@ -19,9 +19,13 @@ import kotlinx.coroutines.flow.StateFlow
 @Composable
 fun SupportAllScreen(
     windowDpSize: DpSize,
-    screenInfo: ScreenInfo = ScreenInfo()
+    screenInfo: ScreenInfo = ScreenInfo(),
+    devicePosture: StateFlow<WindowLayoutInfo>
 ) {
-    val screenClassifier = screenInfo.createClassifier(windowDpSize)
+    //transform the device posture state flow into a state which for sure would trigger a recomposition
+    val devicePostureValue by devicePosture.collectAsState()
+    val screenClassifier = screenInfo.createClassifier(devicePostureValue, windowDpSize)
+
 
     SupportAllScreensTheme() {
         val navController = rememberNavController()

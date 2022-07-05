@@ -10,6 +10,7 @@ sealed interface ScreenClassifier {
         val width: Dimension
     ) : ScreenClassifier
 
+    //generic representation of a foldable phone
     sealed interface HalfOpened : ScreenClassifier {
         val hingePosition: Rect
         val hingeSeparationRatio: Float
