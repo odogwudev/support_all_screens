@@ -8,6 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.odogwudev.supportallscreens.ui.devicemodes.DeviceModesRoute
 import com.odogwudev.supportallscreens.ui.home.HomeRoute
+import com.odogwudev.supportallscreens.ui.layoutmodes.LayoutModesRoute
+import com.odogwudev.supportallscreens.ui.layoutmodes.LayoutModesViewModel
 import com.odogwudev.supportallscreens.utils.screen.ScreenClassifier
 
 @Composable
@@ -35,7 +37,12 @@ fun SupportAllScreensNavGraph(
         }
 
         composable(Destinations.LayoutModes) {
+            val viewModel: LayoutModesViewModel = viewModel()
 
+            LayoutModesRoute(
+                layoutModesViewModel = viewModel,
+                screenClassifier = screenClassifier
+            )
         }
     }
 }
