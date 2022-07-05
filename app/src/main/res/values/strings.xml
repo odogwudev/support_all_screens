@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">support all screens</string>
+
+    <string name="view_device_modes">View Device Modes</string>
+    <string name="view_layout_modes">View Layout Modes</string>
+
+    <string name="hinge_position">Hinge Position:</string>
+    <string name="list_item">List Item</string>
+    <string name="article_content">Article Content</string>
+    <string name="no_article">No Article Selected :(</string>
 </resources>
